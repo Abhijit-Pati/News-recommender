@@ -21,7 +21,9 @@ urls = db["url"].tolist()
 with open("clusters.txt", "rb") as fp:
     ldata=pickle.load(fp) #[[labels],[centroids,labels]]
 print(ldata[1])
-dmat=np.load('Dmat.npy')
+dmat=np.load('Dmat.npy') #Distance matrix of normalised vector space(nX).
+
+#Here we choose 10 most distant centroids and show their nearest neighbours in random order
 cent=[]
 dcentsum=[]
 for i in ldata[1]:
